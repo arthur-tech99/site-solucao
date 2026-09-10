@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solução Informática — Tecnologia que impulsiona o seu negócio</title>
+<meta name="description" content="Suporte técnico, manutenção e soluções completas de TI para sua empresa funcionar sem parar.">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#inicio" class="brand">
+      <img src="assets/img/logo-icon.svg" alt="" class="brand__icon">
+      <span class="brand__name">Solução<br><small>Informática</small></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio" class="nav__link is-active">Início</a>
+      <a href="#servicos" class="nav__link">Serviços</a>
+      <a href="#como-funciona" class="nav__link">Como Funciona</a>
+      <a href="#sobre" class="nav__link">Sobre</a>
+      <a href="#depoimentos" class="nav__link">Depoimentos</a>
+      <a href="#contato" class="nav__link">Contato</a>
+      <a href="#" class="btn btn--whatsapp nav__cta" data-wa-cta>
+        <i class="fa-brands fa-whatsapp"></i> Quero um diagnóstico gratuito
+      </a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      <div class="hero__content" data-reveal>
+        <p class="eyebrow">Tecnologia que impulsiona o seu negócio</p>
+        <h1 class="hero__title">
+          Menos problemas.<br>
+          <span class="text-gradient">Mais produtividade.</span>
+        </h1>
+        <p class="hero__text">Suporte técnico, manutenção e soluções completas de TI para sua empresa funcionar sem parar.</p>
+        <a href="#" class="btn btn--whatsapp btn--lg" data-wa-cta>
+          <i class="fa-brands fa-whatsapp"></i> Quero um diagnóstico gratuito <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <ul class="hero__features">
+          <li><i class="fa-solid fa-bolt"></i> Atendimento rápido</li>
+          <li><i class="fa-solid fa-desktop"></i> Suporte remoto e presencial</li>
+          <li><i class="fa-solid fa-chart-line"></i> Foco em resultados</li>
+        </ul>
+      </div>
+
+      <div class="hero__media" data-reveal>
+        <div class="video-card">
+          <video class="video-card__video" id="heroVideo" poster="assets/img/logo-icon.svg" playsinline>
+            <source src="assets/video/apresentacao.mp4" type="video/mp4">
+          </video>
+          <div class="video-card__overlay" id="videoOverlay">
+            <button class="video-card__play" id="playBtn" aria-label="Assistir ao vídeo">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <span class="video-card__label">Assista ao nosso vídeo</span>
+          </div>
+          <div class="video-card__controls">
+            <i class="fa-solid fa-play" id="ctrlPlay"></i>
+            <span class="video-card__time" id="videoTime">0:00 / 0:00</span>
+            <span class="video-card__spacer"></span>
+            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-expand"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+
+        <figure class="hero__character">
+          <span class="handwrite handwrite--hero">Seu parceiro de TI</span>
+          <img src="assets/img/character-front.svg" alt="Técnico de TI da Solução Informática, seu parceiro de tecnologia" loading="eager">
+          <div class="badge-card">
+            <span>Tecnologia que gera resultados</span>
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="services" id="servicos">
+    <div class="container services__inner">
+      <figure class="services__character" data-reveal>
+        <span class="handwrite handwrite--services">Suporte em<br>todas as etapas</span>
+        <img src="assets/img/character-back.svg" alt="Técnico de TI analisando dados em tablet" loading="lazy">
+      </figure>
+
+      <div class="services__intro" data-reveal>
+        <p class="eyebrow">Nossos serviços</p>
+        <h2 class="section-title">Soluções completas para a sua empresa</h2>
+        <p class="section-text">Cuidamos da sua estrutura de TI para que você possa focar no que realmente importa: o crescimento do seu negócio.</p>
+        <a href="#contato" class="btn btn--outline">Conheça nossos serviços <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="services__list" data-reveal>
+        <div class="service-item">
+          <div class="service-item__icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h3>Suporte Técnico</h3>
+            <p>Atendimento rápido e eficiente para o dia a dia da sua empresa.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><i class="fa-solid fa-laptop"></i></div>
+          <div>
+            <h3>Manutenção de Equipamentos</h3>
+            <p>Seu hardware sempre em pleno funcionamento.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><i class="fa-solid fa-wifi"></i></div>
+          <div>
+            <h3>Redes e Infraestrutura</h3>
+            <p>Conexão estável e segura para sua operação.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h3>Segurança da Informação</h3>
+            <p>Proteção de dados e prevenção de problemas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="how" id="como-funciona">
+    <div class="container">
+      <div class="how__head" data-reveal>
+        <p class="eyebrow">Como funciona</p>
+        <h2 class="section-title">Simples, rápido e eficiente</h2>
+        <p class="section-text">Em poucos passos, sua empresa mais segura e produtiva.</p>
+        <span class="handwrite handwrite--how">Da análise<br>ao resultado</span>
+      </div>
+
+      <div class="how__steps" data-reveal>
+        <div class="step">
+          <div class="step__icon"><i class="fa-solid fa-comments"></i></div>
+          <span class="step__number">01</span>
+          <h3>Fale com a gente</h3>
+          <p>Entenda sua necessidade.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right step__arrow"></i>
+        <div class="step">
+          <div class="step__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <span class="step__number">02</span>
+          <h3>Diagnóstico</h3>
+          <p>Analisamos o cenário atual.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right step__arrow"></i>
+        <div class="step">
+          <div class="step__icon"><i class="fa-solid fa-gear"></i></div>
+          <span class="step__number">03</span>
+          <h3>Solução personalizada</h3>
+          <p>Indicamos o melhor plano.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right step__arrow"></i>
+        <div class="step">
+          <div class="step__icon"><i class="fa-solid fa-circle-check"></i></div>
+          <span class="step__number">04</span>
+          <h3>Suporte contínuo</h3>
+          <p>Sua empresa sempre em movimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="container about__inner">
+      <div class="about__intro" data-reveal>
+        <p class="eyebrow">Sobre nós</p>
+        <h2 class="section-title">Mais que suporte,<br>uma parceria de longo prazo</h2>
+        <p class="section-text">A Solução Informática nasceu com o propósito de simplificar a tecnologia para empresas, oferecendo soluções práticas, seguras e com atendimento humanizado.</p>
+        <ul class="about__badges">
+          <li><i class="fa-solid fa-circle-check"></i> Experiência</li>
+          <li><i class="fa-solid fa-circle-check"></i> Compromisso</li>
+          <li><i class="fa-solid fa-circle-check"></i> Resultados</li>
+        </ul>
+      </div>
+
+      <figure class="about__character" data-reveal>
+        <span class="handwrite handwrite--about">Gente que<br>resolve</span>
+        <img src="assets/img/character-front.svg" alt="Fundador da Solução Informática" loading="lazy">
+      </figure>
+
+      <blockquote class="quote-card" id="depoimentos" data-reveal>
+        <i class="fa-solid fa-quote-left quote-card__icon"></i>
+        <p>Nosso objetivo é ser o parceiro de TI que sua empresa pode contar sempre.</p>
+        <span class="quote-card__signature">Solução Informática</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CONTATO / DIAGNÓSTICO -->
+  <section class="contact" id="contato">
+    <div class="container contact__inner">
+      <div class="contact__intro" data-reveal>
+        <p class="eyebrow">Diagnóstico gratuito</p>
+        <h2 class="section-title">Conte um pouco sobre a sua empresa</h2>
+        <p class="section-text">Preencha o formulário ao lado e nossa equipe fará um diagnóstico inicial sem compromisso.</p>
+        <ul class="contact__trust">
+          <li><i class="fa-solid fa-shield-halved"></i> Análise personalizada</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Sem compromisso</li>
+          <li><i class="fa-solid fa-bolt"></i> Retorno rápido</li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm" data-reveal>
+        <div class="contact-form__row">
+          <div class="field">
+            <label for="nome">Nome completo*</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa*</label>
+            <input type="text" id="empresa" name="empresa" required>
+          </div>
+        </div>
+        <div class="contact-form__row">
+          <div class="field">
+            <label for="telefone">Telefone / WhatsApp*</label>
+            <input type="tel" id="telefone" name="telefone" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="desafio">Qual é o principal desafio hoje?*</label>
+          <select id="desafio" name="desafio" required>
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="Suporte técnico">Suporte técnico</option>
+            <option value="Manutenção de equipamentos">Manutenção de equipamentos</option>
+            <option value="Redes e infraestrutura">Redes e infraestrutura</option>
+            <option value="Segurança da informação">Segurança da informação</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco mais sobre a sua necessidade..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--whatsapp btn--block">
+          <i class="fa-brands fa-whatsapp"></i> Enviar e receber meu diagnóstico gratuito <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <p class="contact-form__note"><i class="fa-solid fa-lock"></i> Seus dados estão seguros. Não enviamos spam.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="#inicio" class="brand">
+      <img src="assets/img/logo-icon.svg" alt="" class="brand__icon">
+      <span class="brand__name">Solução<br><small>Informática</small></span>
+    </a>
+
+    <nav class="footer__nav">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="footer__social">
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <p class="footer__copy">© <span id="year"></span> Solução Informática. Todos os direitos reservados.</p>
+</footer>
+
+<a href="#" class="whatsapp-float" data-wa-cta aria-label="Falar no WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

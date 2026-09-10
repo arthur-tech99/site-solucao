@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 620" fill="none">
+  <defs>
+    <linearGradient id="poloB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f6fed"/>
+      <stop offset="100%" stop-color="#12306e"/>
+    </linearGradient>
+    <linearGradient id="skinB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e3b48c"/>
+      <stop offset="100%" stop-color="#c8946a"/>
+    </linearGradient>
+    <radialGradient id="glowB" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="210" cy="230" rx="190" ry="190" fill="url(#glowB)"/>
+
+  <!-- legs -->
+  <rect x="150" y="430" width="55" height="170" rx="20" fill="#1a2340"/>
+  <rect x="215" y="430" width="55" height="170" rx="20" fill="#141b33"/>
+
+  <!-- torso / polo back -->
+  <path d="M130 260 C130 210 165 185 210 185 C255 185 290 210 290 260 L300 450 C300 470 280 480 260 480 L160 480 C140 480 120 470 120 450 Z" fill="url(#poloB)"/>
+  <!-- back collar seam -->
+  <path d="M195 190 L210 205 L225 190" stroke="#0f1a3d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- logo on back shoulder -->
+  <rect x="196" y="215" width="28" height="34" rx="5" fill="#7ec8ff" opacity="0.9"/>
+  <rect x="203" y="222" width="14" height="14" rx="2" fill="#0b1230"/>
+
+  <!-- right arm holding tablet up -->
+  <path d="M282 265 C320 250 344 210 336 165" stroke="url(#poloB)" stroke-width="46" stroke-linecap="round" fill="none"/>
+  <circle cx="333" cy="155" r="24" fill="url(#skinB)"/>
+  <!-- left arm relaxed -->
+  <path d="M138 265 C112 300 104 350 116 405" stroke="url(#poloB)" stroke-width="46" stroke-linecap="round" fill="none"/>
+  <circle cx="118" cy="412" r="24" fill="url(#skinB)"/>
+
+  <!-- tablet held up -->
+  <rect x="290" y="60" width="100" height="130" rx="12" fill="#0b1230" stroke="#2f6fed" stroke-width="3" transform="rotate(8 340 125)"/>
+  <rect x="300" y="74" width="80" height="88" rx="4" fill="#123a8f" transform="rotate(8 340 125)"/>
+
+  <!-- neck -->
+  <rect x="192" y="150" width="36" height="45" rx="14" fill="url(#skinB)"/>
+
+  <!-- head from behind -->
+  <ellipse cx="210" cy="110" rx="58" ry="64" fill="url(#skinB)"/>
+  <path d="M150 108 C144 55 172 28 210 28 C250 28 276 56 270 108 C270 60 240 48 210 48 C180 48 150 60 150 108 Z" fill="#2a1e17"/>
+</svg>
