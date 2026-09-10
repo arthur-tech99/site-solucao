@@ -44,16 +44,44 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; margin: 0; padding: 0; }
 
 /* ===== Background texture ===== */
-body {
+body { background: var(--bg-0); }
+
+.bg-fx {
+  position: fixed;
+  inset: -12%;
+  z-index: -1;
+  pointer-events: none;
+}
+.bg-fx::before,
+.bg-fx::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.bg-fx::before {
   background-image:
-    repeating-linear-gradient(135deg, rgba(79, 163, 255, 0.05) 0px, rgba(79, 163, 255, 0.05) 1px, transparent 1px, transparent 46px),
-    repeating-linear-gradient(45deg, rgba(79, 163, 255, 0.05) 0px, rgba(79, 163, 255, 0.05) 1px, transparent 1px, transparent 46px),
-    radial-gradient(ellipse 1000px 560px at 12% 0%, rgba(47, 111, 237, 0.32), transparent 60%),
-    radial-gradient(ellipse 900px 700px at 92% 20%, rgba(56, 189, 248, 0.2), transparent 55%),
-    radial-gradient(ellipse 1000px 800px at 8% 65%, rgba(47, 111, 237, 0.22), transparent 55%),
-    radial-gradient(ellipse 900px 700px at 95% 90%, rgba(34, 197, 94, 0.12), transparent 55%),
+    radial-gradient(ellipse 1000px 560px at 12% 6%, rgba(47, 111, 237, 0.34), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 92% 24%, rgba(56, 189, 248, 0.22), transparent 55%),
+    radial-gradient(ellipse 1000px 800px at 10% 66%, rgba(47, 111, 237, 0.24), transparent 55%),
+    radial-gradient(ellipse 900px 700px at 94% 88%, rgba(34, 197, 94, 0.13), transparent 55%),
     linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-2));
-  background-attachment: fixed;
+  animation: bgDrift 26s ease-in-out infinite alternate;
+}
+.bg-fx::after {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(79, 163, 255, 0.055) 0px, rgba(79, 163, 255, 0.055) 1px, transparent 1px, transparent 46px),
+    repeating-linear-gradient(45deg, rgba(79, 163, 255, 0.055) 0px, rgba(79, 163, 255, 0.055) 1px, transparent 1px, transparent 46px);
+  animation: gridDrift 18s linear infinite;
+}
+
+@keyframes bgDrift {
+  0%   { transform: translate(0%, 0%) scale(1.06); }
+  50%  { transform: translate(-1.6%, 1.4%) scale(1.1); }
+  100% { transform: translate(1.6%, -1.2%) scale(1.06); }
+}
+@keyframes gridDrift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(46px, 46px); }
 }
 
 /* ===== Wave dividers ===== */
@@ -62,9 +90,23 @@ body {
   line-height: 0;
   margin-top: 40px;
   pointer-events: none;
+  overflow: hidden;
 }
 .wave-divider svg { display: block; width: 100%; height: 70px; }
 .wave-divider--alt svg { transform: scaleY(-1); }
+.wave-divider path[stroke] { animation: waveFlow 7s ease-in-out infinite; }
+.wave-divider path[stroke]:nth-of-type(2) { animation-duration: 9s; animation-direction: reverse; }
+
+@keyframes waveFlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-fx::before, .bg-fx::after, .wave-divider path[stroke] {
+    animation: none;
+  }
+}
 
 /* ===== Typography helpers ===== */
 .eyebrow {
@@ -444,6 +486,57 @@ body {
 .quote-card__icon { color: var(--blue-light); font-size: 22px; opacity: 0.7; }
 .quote-card p { font-size: 19px; line-height: 1.4; margin: 16px 0 20px; }
 .quote-card__signature { font-family: 'Caveat', cursive; font-size: 24px; color: var(--blue-light); }
+
+/* ===== Testimonials ===== */
+.testimonials { padding: 90px 0 70px; }
+.testimonials__head { max-width: 560px; margin: 0 auto 48px; text-align: center; }
+.testimonials__head .section-text { margin-left: auto; margin-right: auto; }
+
+.testimonials__marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.testimonials__track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 4px 0;
+  animation: marquee 42s linear infinite;
+}
+.testimonials__marquee:hover .testimonials__track { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.testimonial-card {
+  width: 340px;
+  flex-shrink: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.testimonial-card__stars { color: #facc15; font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+.testimonial-card p { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin: 0 0 20px; }
+.testimonial-card__author { display: flex; align-items: center; gap: 12px; }
+.testimonial-card__author strong { display: block; font-size: 14px; }
+.testimonial-card__author span { font-size: 12.5px; color: var(--text-faint); }
+.avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--blue), var(--blue-light));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials__track { animation: none; }
+}
 
 /* ===== Contact ===== */
 .contact { padding: 90px 0 120px; }

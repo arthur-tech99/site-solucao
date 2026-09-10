@@ -2,7 +2,7 @@
   'use strict';
 
   // ---- Config: replace with the real business WhatsApp number (country + area code, no symbols) ----
-  const WHATSAPP_NUMBER = '5511999999999';
+  const WHATSAPP_NUMBER = '556133403894';
   const WHATSAPP_DEFAULT_MESSAGE = 'Olá! Quero um diagnóstico gratuito de TI para minha empresa.';
 
   const waLink = (message) =>
