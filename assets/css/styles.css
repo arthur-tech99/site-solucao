@@ -46,13 +46,25 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ===== Background texture ===== */
 body {
   background-image:
-    radial-gradient(ellipse 900px 500px at 15% 0%, rgba(47, 111, 237, 0.22), transparent 60%),
-    radial-gradient(ellipse 800px 600px at 90% 25%, rgba(56, 189, 248, 0.14), transparent 55%),
-    radial-gradient(ellipse 900px 700px at 10% 70%, rgba(47, 111, 237, 0.16), transparent 55%),
-    radial-gradient(ellipse 900px 700px at 95% 95%, rgba(34, 197, 94, 0.08), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(79, 163, 255, 0.05) 0px, rgba(79, 163, 255, 0.05) 1px, transparent 1px, transparent 46px),
+    repeating-linear-gradient(45deg, rgba(79, 163, 255, 0.05) 0px, rgba(79, 163, 255, 0.05) 1px, transparent 1px, transparent 46px),
+    radial-gradient(ellipse 1000px 560px at 12% 0%, rgba(47, 111, 237, 0.32), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 92% 20%, rgba(56, 189, 248, 0.2), transparent 55%),
+    radial-gradient(ellipse 1000px 800px at 8% 65%, rgba(47, 111, 237, 0.22), transparent 55%),
+    radial-gradient(ellipse 900px 700px at 95% 90%, rgba(34, 197, 94, 0.12), transparent 55%),
     linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-2));
   background-attachment: fixed;
 }
+
+/* ===== Wave dividers ===== */
+.wave-divider {
+  position: relative;
+  line-height: 0;
+  margin-top: 40px;
+  pointer-events: none;
+}
+.wave-divider svg { display: block; width: 100%; height: 70px; }
+.wave-divider--alt svg { transform: scaleY(-1); }
 
 /* ===== Typography helpers ===== */
 .eyebrow {
@@ -181,8 +193,6 @@ body {
   border-radius: 2px;
 }
 
-.header__cta { flex-shrink: 0; }
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -300,34 +310,30 @@ body {
 .video-card__spacer { flex: 1; }
 .video-card__controls i { cursor: pointer; }
 
-.hero__character {
-  position: absolute;
-  right: -18px;
-  bottom: -64px;
-  width: 230px;
-  margin: 0;
-  z-index: 2;
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
+.handwrite--hero {
+  position: static;
+  display: inline-block;
+  margin: 0 0 10px 8px;
+  transform: rotate(-3deg);
 }
-.handwrite--hero { top: -30px; right: 10px; transform: rotate(-4deg); text-align: right; }
 
 .badge-card {
-  position: absolute;
-  bottom: 46px;
-  left: -60px;
+  position: relative;
+  margin: -26px 0 0 28px;
   background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 12px 14px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  width: 150px;
+  max-width: 220px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  z-index: 2;
 }
 .badge-card i { color: var(--green); font-size: 16px; flex-shrink: 0; }
 
@@ -335,12 +341,16 @@ body {
 .services { padding: 90px 0; }
 .services__inner {
   display: grid;
-  grid-template-columns: 0.7fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
   align-items: center;
 }
-.services__character { position: relative; margin: 0; }
-.handwrite--services { top: -18px; left: 0; transform: rotate(-4deg); }
+.handwrite--services {
+  position: static;
+  display: inline-block;
+  margin-bottom: 10px;
+  transform: rotate(-3deg);
+}
 
 .services__list {
   display: flex;
@@ -409,16 +419,20 @@ body {
 .about { padding: 90px 0; }
 .about__inner {
   display: grid;
-  grid-template-columns: 1fr 0.85fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
   align-items: center;
 }
 .about__badges { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 8px; }
 .about__badges li { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
 .about__badges i { color: var(--green); }
 
-.about__character { position: relative; margin: 0; justify-self: center; width: 230px; }
-.handwrite--about { top: -20px; right: -10px; transform: rotate(4deg); text-align: left; }
+.handwrite--about {
+  position: static;
+  display: inline-block;
+  margin-bottom: 10px;
+  transform: rotate(3deg);
+}
 
 .quote-card {
   background: var(--card);
@@ -534,13 +548,11 @@ body {
 /* ===== Responsive ===== */
 @media (max-width: 1080px) {
   .services__inner { grid-template-columns: 1fr; text-align: center; }
-  .services__character { justify-self: center; width: 200px; }
-  .services__intro { order: -1; }
   .services__list { max-width: 560px; margin: 0 auto; text-align: left; }
 
   .about__inner { grid-template-columns: 1fr; text-align: center; }
-  .about__character { order: -1; }
   .about__badges { justify-content: center; }
+  .quote-card { max-width: 560px; margin: 0 auto; text-align: left; }
 
   .how__steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
   .step__arrow { display: none; }
@@ -567,24 +579,7 @@ body {
 
   .hero__inner { grid-template-columns: 1fr; }
   .hero__media { margin-top: 40px; }
-  .hero__character {
-    position: static;
-    width: 150px;
-    margin: 20px auto 0;
-    filter: none;
-  }
-  .handwrite--hero {
-    position: static;
-    display: block;
-    text-align: center;
-    transform: none;
-    margin-bottom: 4px;
-  }
-  .badge-card {
-    position: static;
-    width: 220px;
-    margin: 14px auto 0;
-  }
+  .badge-card { margin: -20px 0 0 20px; }
 
   .contact-form__row { grid-template-columns: 1fr; }
 }
